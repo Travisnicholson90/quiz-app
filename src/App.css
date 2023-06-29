@@ -1,0 +1,10 @@
+body {
+    background-image: url(./assets/images/blue.jpg);
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* <a href="https://www.freepik.com/free-vector/blue-fluid-background_16326494.htm?query=background#from_view=detail_alsolike">Image by rawpixel.com</a> on Freepik */

@@ -1,0 +1,9 @@
+  .show {
+    opacity: 1;
+    transition: ease-in-out 1s;
+  }
+  
+  .hide {
+    opacity: 0;
+    transition: ease-in-out 1s;
+  }
