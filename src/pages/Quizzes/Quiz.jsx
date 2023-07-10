@@ -9,7 +9,7 @@ const Quiz = () => {
     const [quiz, setQuiz] = useState([]);
     const [score, setScore] = useState(0);
     const [index, setIndex] = useState(0);
-    const [currentQuestion, setCurrentQuestion] = useState(null);
+    // const [currentQuestion, setCurrentQuestion] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [completedQuiz, setCompletedQuiz] = useState(false);
     const [answerDisabled, setAnswerDisabled] = useState({});
@@ -48,13 +48,13 @@ const handleScore = (e) => {
   }, [score]);
   
   //get current question index
-  const getCurrentQuestion = () => {
-    if(quiz.questions && quiz.questions.length > 0) {
-        const currentQuestion = quiz.questions[index] + 1;
-        setCurrentQuestion(currentQuestion);
-        console.log(currentQuestion);
-  }
-}
+//   const getCurrentQuestion = () => {
+//     if(quiz.questions && quiz.questions.length > 0) {
+//         const currentQuestion = quiz.questions[index] + 1;
+//         setCurrentQuestion(currentQuestion);
+//         console.log(currentQuestion);
+//   }
+// }
 
 // create function to increment index when the next button is clicked
 const incrementQuestion = () => {
@@ -115,9 +115,6 @@ return (
                             ))}
                     </ul>
                     <div className='flex items-end justify-end mt-5'>
-                    {/* <div onClick={decrementQuestion}>
-                        <Button>Previous</Button>
-                    </div> */}
                     <div onClick={incrementQuestion}>
                         <Button>Next</Button>
                     </div>
