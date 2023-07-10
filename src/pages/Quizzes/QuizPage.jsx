@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../UI/Quiz/QuizButton';
+import Loader from '../../Components/Spinner/Spinner';
 
 const QuizPage = () => {
   const [quiz, setQuiz] = useState(null);
@@ -28,7 +29,8 @@ const QuizPage = () => {
   //set loading state
   if (!quiz) {
     return (
-      <div className='flex items-center justify-center text-3xl lg:text-5xl text-purple-500 pt-20'>
+      <div className='flex items-center justify-center text-3xl lg:text-5xl text-purple-500 pt-20 gap-4'>
+        <Loader />
         <h2>Loading...</h2>
       </div>
       );

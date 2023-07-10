@@ -26,8 +26,8 @@ const CompletedQuiz = (props) => {
                 <Link to='/quizzes'>
                     <Button>Back to Quizzes</Button>
                 </Link>
-                <Link to={`/dashboard/${userId}`}>
-                    <Button>Back to Dashboard</Button>
+                <Link to={`/`}>
+                    <Button>Back to Home</Button>
                 </Link>                
             </div>
         </div>

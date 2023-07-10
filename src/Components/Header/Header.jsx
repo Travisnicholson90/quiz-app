@@ -5,20 +5,13 @@ import { useAuthContext } from '../../hooks/useAuthContext'
 import { useLogout } from '../../hooks/useLogout';
 
 const Header = () => {
-const [userId, setUserId] = useState('');
 
 const { user } = useAuthContext();
 const { logout } = useLogout();
 
 const [navOpen, setNavOpen] = useState(false);
 const location = useLocation();
-
-useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    const userId = user.user;
-    setUserId(userId);
-  }, []);
-    
+   
     const logoutHandler = () => {
         logout();
     }
@@ -51,16 +44,17 @@ useEffect(() => {
                 <div className='flex flex-col py-10 items-start ms-5 gap-5 text-2xl tracking-widest font-bold'>
                     <Link to='/'>Home</Link>
                     <Link to='/quizzes'>Quizzes</Link>
-                    <Link to={`/dashboard/${userId}`}>DashBoard</Link>
-                    { !user && (
+                    {user ? (
+                        <>
+                            {/* <Link to={`/dashboard/${userId}`}>DashBoard</Link> */}
+                            <Link onClick={logoutHandler} to="/">Logout</Link>
+                        </>
+                        ) : (
                         <div className='flex flex-col gap-5 tracking-widest'>
                             <Link to="/login">Login</Link>
                             <Link to="/signup">Signup</Link>
                         </div>
-                    )}
-                    { user && (
-                    <Link onClick={logoutHandler} to="/">Logout</Link>
-                    )}
+                        )}
                 </div>
             </nav>
             )}
